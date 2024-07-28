@@ -1,27 +1,53 @@
-# HealthChallengeTracker
+# Health Challenge Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Description
 
-## Development server
+The Health Challenge Tracker is a web application that allows users to track their workouts, view workout statistics, and manage workout data. This project was built using Angular and features components for adding workouts, filtering, listing, and visualizing workout data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Workout Form**: Add and manage workouts.
+- **Search Filter**: Filter workouts by name and type.
+- **Workout List**: View a list of all workouts.
+- **User Workout Chart**: Visualize workout data for each user with charts.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Hosted Website
 
-## Build
+You can view the live application [here](https://health-challenge-tracker-v1-seven.vercel.app/).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+To set up the project locally, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
+   git clone https://github.com/sret-farhan2021/health-challenge-tracker.git `
 
-## Running end-to-end tests
+2.  Navigate to the project directory:
+    `cd health-challenge-tracker`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2.  Install the dependencies:
+    `npm install`
 
-## Further help
+3.  Run the application:
+    `ng serve`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Open `http://localhost:4200` in your browser to view the application.
+
+Running Tests
+-------------
+
+To run the unit tests and generate a code coverage report, use the following command:
+
+`ng test --code-coverage`
+
+The coverage report will be generated in the `coverage` directory. Open `coverage/index.html` in your browser to view the detailed coverage report.
+
+Code Coverage
+-------------
+
+The project includes unit tests for the following:
+
+-   **Component**: UserWorkoutChartComponent
+-   **Service**: WorkoutService
+
+Both the component and the service have 100% code coverage.
