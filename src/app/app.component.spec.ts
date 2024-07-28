@@ -1,16 +1,32 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { WorkoutFormComponent } from './workout-form/workout-form.component';
+import { WorkoutListComponent } from './workout-list/workout-list.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { UserWorkoutChartComponent } from './user-workout-chart/user-workout-chart.component';
+import { WorkoutService } from './workout.service';
+import { of } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
+  let workoutServiceStub: Partial<WorkoutService>;
+
   beforeEach(async () => {
+    // Stub WorkoutService
+    workoutServiceStub = {
+      getUsers: () => of([])
+    };
+
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        WorkoutFormComponent,
+        WorkoutListComponent,
+        SearchFilterComponent,
+        UserWorkoutChartComponent
       ],
+      imports: [FormsModule],
+      providers: [{ provide: WorkoutService, useValue: workoutServiceStub }]
     }).compileComponents();
   });
 
@@ -26,10 +42,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('health-challenge-tracker');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, health-challenge-tracker');
-  });
 });

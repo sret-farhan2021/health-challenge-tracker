@@ -1,0 +1,7 @@
+<div class="tabs flex items-center justify-center mb-4 space-x-2">
+    <button *ngFor="let user of users" (click)="onUserChange(user.id)" class="py-2 px-4 bg-gray-200 rounded hover:bg-blue-300 focus:outline-none">
+      {{ user.name }}
+    </button>
+  </div>
+  <div echarts [options]="chartOptions" class="chart h-96"></div>
+  

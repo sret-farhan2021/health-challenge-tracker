@@ -1,0 +1,22 @@
+<div class="space-y-4 mb-4">
+  <div>
+    <label for="nameFilter" class="block text-sm font-medium text-gray-700">Search by Name</label>
+    <input
+      type="text"
+      id="nameFilter"
+      [(ngModel)]="name"
+      (ngModelChange)="onFilterChange()"
+      class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    />
+  </div>
+  <div>
+    <label for="typeFilter" class="block text-sm font-medium text-gray-700">Filter by Workout Type</label>
+    <input
+      type="text"
+      id="typeFilter"
+      [(ngModel)]="type"
+      (ngModelChange)="onFilterChange()"
+      class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    />
+  </div>
+</div>

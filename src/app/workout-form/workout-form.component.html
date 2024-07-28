@@ -1,0 +1,74 @@
+<div class="p-4 bg-white rounded-lg shadow-md">
+  <h2 class="text-lg font-semibold mb-4">Add Workout</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        required
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+      />
+    </div>
+
+    <div *ngFor="let workout of workouts; let i = index" class="mb-4 flex items-center">
+      <div class="flex-1 mr-2">
+        <label for="workout-type-{{i}}" class="block text-sm font-medium text-gray-700">Workout Type</label>
+        <select
+          id="workout-type-{{i}}"
+          [(ngModel)]="workouts[i].type"
+          name="type-{{i}}"
+          required
+          [ngModelOptions]="{standalone: true}"
+          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        >
+          <option value="">Select Workout</option>
+          <option *ngFor="let workout of getAvailableWorkouts(workouts[i].type)" [value]="workout">{{ workout }}</option>
+        </select>
+      </div>
+      <div class="flex-1 mr-2">
+        <label for="minutes-{{i}}" class="block text-sm font-medium text-gray-700">Minutes</label>
+        <input
+          id="minutes-{{i}}"
+          type="number"
+          [(ngModel)]="workouts[i].minutes"
+          name="minutes-{{i}}"
+          required
+          min="1"
+          class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        />
+      </div>
+      <button
+        type="button"
+        (click)="removeWorkout(i)"
+        class="px-4 py-2 bg-red-500 text-white rounded-md"
+      >
+        Remove
+      </button>
+    </div>
+
+    <button
+  type="button"
+  (click)="addWorkout()"
+  class="px-4 py-2 bg-blue-500 text-white rounded-md mb-4 mr-2"
+  [disabled]="workouts.length >= maxWorkouts"
+>
+  Add Another Workout
+</button>
+
+<button
+  type="submit"
+  [disabled]="!isFormValid()"
+  class="px-4 py-2 bg-green-500 text-white rounded-md"
+>
+  Submit
+</button>
+
+
+    <div *ngIf="alertMessage" class="mt-4 text-red-500">
+      {{ alertMessage }}
+    </div>
+  </form>
+</div>
