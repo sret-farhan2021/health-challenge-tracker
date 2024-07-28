@@ -54,3 +54,9 @@ Both the component and the service have 100% code coverage.
 
 ## Coverage Status
 ![Coverage Badge](https://img.shields.io/badge/coverage-100%25-green)
+
+![image](https://github.com/user-attachments/assets/2110f2cc-7f39-41c1-995b-bf8712529f65)
+![image](https://github.com/user-attachments/assets/4909beb6-ac00-404e-8bc7-272592eb2839)
+![image](https://github.com/user-attachments/assets/c42c4461-768d-4fd6-8f28-8b07f8701d0d)
+
+
