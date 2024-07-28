@@ -53,4 +53,4 @@ The project includes unit tests for the following:
 Both the component and the service have 100% code coverage.
 
 ## Coverage Status
-(https://img.shields.io/badge/coverage-100%25-green)
+![Coverage Badge](https://img.shields.io/badge/coverage-100%25-green)
